@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./Jcrop-WIP-2.x/js/jquery.min.js"></script>
+	<script src="./Jcrop-WIP-2.x/js/Jcrop.js?k=2"></script>
+	<link rel="stylesheet" href="./Jcrop-WIP-2.x/css/Jcrop.css">
+	<style>
+		#view {
+			margin: 100px auto;
+			border: 1px dashed red;
+			width: 260px;
+			height: 130px;
+		}
+	</style>
+</head>
+<body>
+	<h1>已经修改源码，可以实时展示在页面的各个位置。</h1>
+	<div id="view"></div>
+	<img src="./1.jpg" alt="">
+	<script>
+		$('img').Jcrop({
+		  aspectRatio: 2,
+		  setSelect: [ 175, 100, 400, 300 ]
+		},function(){
+		  var jcrop_api = this;
+		  this.initComponent('Thumbnailer', { width: 260, height: 130, target: '#view' }); //这的target就是你想渲染渲中区域的元素
+		});
+	
+	</script>
+</body>
+</html>
